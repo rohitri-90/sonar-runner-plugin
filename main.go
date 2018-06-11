@@ -121,6 +121,18 @@ func main() {
 			EnvVar: "PLUGIN_ALLOWED_BRANCH_REGEX",
 			Value:  `(^master$|^develop$|^release\/+)`,
 		},
+		cli.StringFlag{
+			Name:   "findbugs.reportPath",
+			Usage:  "Report path for findbugs analysis",
+			EnvVar: "PLUGIN_FINDBUGS_REPORTPATH",
+			Value:  "**/findbugsXml.xml",
+		},
+		cli.StringFlag{
+			Name:   "java.binaries",
+			Usage:  "binary location findbugs analysis",
+			EnvVar: "PLUGIN_JAVA_BINARIES",
+			Value:  "**/target/classes/**",
+		},
 	}
 
 	if err := app.Run(os.Args); err != nil {
