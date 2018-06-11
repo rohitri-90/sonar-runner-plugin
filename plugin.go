@@ -35,6 +35,8 @@ type Plugin struct {
 	BranchOut   string
 	Default     string // default master branch
 	BranchRegex string // to check against Branch and see if we allow running it
+	FindbugReportPath string
+	BuildClasses  string
 }
 
 func (p *Plugin) Exec() error {
