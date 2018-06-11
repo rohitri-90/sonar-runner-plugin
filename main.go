@@ -164,6 +164,8 @@ func run(c *cli.Context) error {
 		Default:     c.String("repo.branch"),
 		Branch:      c.String("commit.branch"),
 		BranchRegex: c.String("allowed.branch.regex"),
+		FindbugReportPath: c.String("findbugs.reportPath"),
+		BuildClasses: c.String("java.binaries"),
 	}
 
 	return plugin.Exec()
